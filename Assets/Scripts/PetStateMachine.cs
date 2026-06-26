@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PetState { HAPPY, SAD, HUNGRY, TIRED, NEGLECTED }
 
@@ -17,10 +18,23 @@ public class PetStateMachine : MonoBehaviour
     public float happinessDrain = 0.5f;
     public float energyDrain = 0.8f;
 
+    [Header("UI Bars")]
+    public Slider hungerBar;
+    public Slider happinessBar;
+    public Slider energyBar;
+
+    void Start()
+    {
+        if (hungerBar != null) { hungerBar.minValue = 0; hungerBar.maxValue = 100; }
+        if (happinessBar != null) { happinessBar.minValue = 0; happinessBar.maxValue = 100; }
+        if (energyBar != null) { energyBar.minValue = 0; energyBar.maxValue = 100; }
+    }
+
     void Update()
     {
         DrainStats();
         UpdateState();
+        UpdateUI();
     }
 
     void DrainStats()
@@ -37,6 +51,13 @@ public class PetStateMachine : MonoBehaviour
         else if (happiness < 30f) currentState = PetState.SAD;
         else if (hunger < 10f || happiness < 10f || energy < 10f) currentState = PetState.NEGLECTED;
         else currentState = PetState.HAPPY;
+    }
+
+    void UpdateUI()
+    {
+        if (hungerBar != null) hungerBar.value = hunger;
+        if (happinessBar != null) happinessBar.value = happiness;
+        if (energyBar != null) energyBar.value = energy;
     }
 
     public void Feed() => hunger = Mathf.Clamp(hunger + 30f, 0, 100);
