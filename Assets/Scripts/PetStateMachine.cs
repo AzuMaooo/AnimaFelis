@@ -22,6 +22,7 @@ public class PetStateMachine : MonoBehaviour
 
     [Header("Sleep")]
     private bool isSleeping = false;
+    public bool IsSleeping => isSleeping;
     public float restFillRate = 20f;
 
     [Header("UI Bars")]
@@ -51,6 +52,7 @@ public class PetStateMachine : MonoBehaviour
     void Update()
     {
         DrainStats();
+        UpdateState();
         if (isSleeping)
         {
             if (energy < 100f)
@@ -77,7 +79,7 @@ public class PetStateMachine : MonoBehaviour
         if (hunger < 30f) currentState = PetState.HUNGRY;
         else if (energy < 30f) currentState = PetState.TIRED;
         else if (happiness < 30f) currentState = PetState.SAD;
-        else if (hunger < 10f || happiness < 10f || energy < 10f) currentState = PetState.NEGLECTED;
+        else if (cleanliness < 30f) currentState = PetState.NEGLECTED;
         else currentState = PetState.HAPPY;
     }
 
@@ -96,8 +98,14 @@ public class PetStateMachine : MonoBehaviour
         else
             hunger = Mathf.Clamp(hunger + 30f, 0, 100);
     }
-    public void Play() => happiness = Mathf.Clamp(happiness + 25f, 0, 100);
+    public void Play()
+    {
+        happiness = Mathf.Clamp(happiness + 25f, 0, 100);
+        hunger = Mathf.Clamp(hunger - 15f, 0, 100);
+        cleanliness = Mathf.Clamp(cleanliness - 15f, 0, 100);
+    }
 
+    public bool IsComboSadHungryDirty => hunger < 30f && cleanliness < 30f && happiness < 30f;
     public void Rest()
     {
         isSleeping = !isSleeping;
