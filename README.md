@@ -8,7 +8,11 @@ Built with **Unity 6.3 LTS** · **C#** · **Android**
 
 ## 🎮 Demo
 
-> Screenshots and gameplay GIF coming soon — active development in progress.
+## Gameplay Demo
+
+<p align="center">
+  <img src="docs/EmotionDemo.gif" width="280" alt="AnimaFelis gameplay demo showing emotion states and stat system"/>
+</p>
 
 <!-- Once you have a GIF or screenshot, replace the line above with:
 ![AnimaFelis Gameplay](Assets/Screenshots/gameplay.gif)
