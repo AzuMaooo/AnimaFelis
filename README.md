@@ -63,8 +63,6 @@ This project is a self-directed Final Year Project (FYP) and primary portfolio p
 
 ## Planned Features
 
-## Roadmap
-
 ### Done
 - [x] Core pet state machine (5 emotions, 4 decaying stats)
 - [x] Action buttons (Feed, Play, Rest, Clean) wired to gameplay logic
