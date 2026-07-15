@@ -5,36 +5,34 @@
 Built with **Unity 6.3 LTS** · **C#** · **Android**
 
 ---
-
-## 🎮 Demo
-
 ## Gameplay Demo
 
 <p align="center">
   <img src="docs/burntloaf.png" width="240" alt="AnimaFelis home screen"/>
   <img src="docs/EmotionDemo.gif" width="240" alt="AnimaFelis gameplay demo"/>
 </p>
-<!-- Once you have a GIF or screenshot, replace the line above with:
-![AnimaFelis Gameplay](Assets/Screenshots/gameplay.gif)
--->
 
 **Current build features:**
 - Pixel-art cat with idle blink and sway animations
 - 4 stat bars (Hunger, Happiness, Energy, Cleanliness) with real-time decay
-- 4 action buttons (Feed, Play, Rest, Clean) with press-state animations and conditional locking
-- 5-state emotion engine driving pet behaviour automatically
+- 5-state emotion system (Happy, Sad, Hungry, Tired, Neglected) driven by stat thresholds
+- Sleep mechanic with gradual energy regeneration and button locking during sleep
+- Overeating penalty (feeding past a hunger threshold reduces happiness)
+- Combo "neglected" state triggered when multiple stats drop critically low simultaneously
+- Mobile portrait UI (1080x2400) with pixel-perfect scaling across resolutions
+- Built in Unity 6.3 LTS (C#) targeting Android
 
 ---
 
-## 📖 About
+## About
 
-AnimaFelis is a 2D mobile game where players care for a pixel-art cat whose mood and health reflect the player's daily habits. The pet reacts expressively to neglect, play, feeding, and rest — making emotional well-being tangible and interactive.
+AnimaFelis is a 2D mobile game where players care for a pixel-art cat whose mood and health reflect the player's daily habits. The pet reacts expressively to neglect, play, feeding, and rest, making emotional well-being tangible and interactive.
 
-This project is a self-directed Final Year Project (FYP) and primary portfolio piece, demonstrating mobile game development in Unity, state-driven game systems, pixel-art UI design, and iterative gameplay design.
+This project is a self-directed Final Year Project (FYP) and primary portfolio piece, demonstrating mobile game development in Unity, state-driven game systems, PixelArt UI design, and iterative gameplay design.
 
 ---
 
-## ✅ Current Implementation
+## Current Implementation
 
 ### Core Systems
 
@@ -59,52 +57,60 @@ This project is a self-directed Final Year Project (FYP) and primary portfolio p
 - 32×32px pixel-art cat sprite (Point filter, RGBA 32-bit)
 - Idle blink animation with ear and tail movement
 - Idle sway animation
-- All pixel-art UI assets designed in Pixilart
+- All pixel-art UI assets designed in Pixel Studio
 
 ---
 
-## 🔜 Planned Features
+## Planned Features
+
+## Roadmap
+
+### Done
+- [x] Core pet state machine (5 emotions, 4 decaying stats)
+- [x] Action buttons (Feed, Play, Rest, Clean) wired to gameplay logic
+- [x] Per-state sprite variants (happy, sad, hungry, tired, neglected)
+- [x] Sleep mechanic with gradual energy fill and button locking
+- [x] Overeating/Overplaying/Too-clean penalties
+- [x] Combo "neglected" state (multiple stats critically low at once)
+- [x] PixelArt stat bar icons
+- [x] Mobile portrait UI (1080x2400), tested across resolutions
 
 ### Next Up
-
-- [ ] Per-state sprite variants (happy, sad, hungry, tired, neglected expressions)
-- [ ] State transition animations
-- [ ] Pixel-art stat bar icons (16×16px) placed left of each slider
-
-### Short Term
-
-- [ ] Stat icon visual feedback (pulse/shake when stat is low)
+- [ ] Outdoor exploration mode (grid-based overworld)
+  - [ ] Tilemap setup
+  - [ ] Grid movement script
+  - [ ] Cat directional walk animations
+  - [ ] Camera follow
+  - [ ] Scene transition from home scene
+  - [ ] Stat system integration (outdoor actions affect stats)
 - [ ] Sound effects for actions and state changes
 - [ ] Button press animations
 
 ### Medium Term
-
-- [ ] Habit tracker integration — real-world habits feed pet stats
+- [ ] Habit tracker integration, real-world habits feed pet stats
 - [ ] Daily check-in system (mood logging tied to pet mood)
-- [ ] Notification system (pet sends reminders when neglected)
+- [ ] Notification system (pet reminds you when neglected)
 - [ ] Save/load system (persist pet state between sessions)
 
 ### Long Term
-
 - [ ] Multiple pet types / unlockable skins
-- [ ] Mini-games triggered by play action
+- [ ] MiniGames triggered by the Play action
 - [ ] Android build and Play Store deployment
-
+- [ ] WebGL build for browser demo (stretch goal)
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Layer           | Tool                    |
-| --------------- | ----------------------- |
-| Engine          | Unity 6.3 LTS           |
-| Language        | C#                      |
-| Art             | Pixilart (pixel art)    |
-| Target Platform | Android                 |
-| Version Control | Git / GitHub            |
-| IDE             | Visual Studio           |
-| AI Assist       | GitHub Copilot          |
+![Unity](https://img.shields.io/badge/Unity-6.3%20LTS-black?logo=unity)
+![C#](https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
+![Git](https://img.shields.io/badge/Version%20Control-Git-F05032?logo=git&logoColor=white)
 
----
+- **Engine:** Unity 6.3 LTS
+- **Language:** C#
+- **Target Platform:** Android
+- **Art:** Custom pixel art (32x32, drawn in Pixel Studio)
+- **Architecture:** Single state machine (`PetStateMachine`) driving stat decay, emotion transitions, and sprite swapping via a single `SpriteRenderer`
 
 ## 📁 Project Structure
 
