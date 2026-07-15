@@ -124,5 +124,9 @@ public class PetStateMachine : MonoBehaviour
         cleanLockIcon.gameObject.SetActive(isSleeping);
     }
 
-    public void Clean() => cleanliness = Mathf.Clamp(cleanliness + 30f, 0, 100);
+    public void Clean()
+    {
+        cleanliness = Mathf.Clamp(cleanliness + 30f, 0, 100);
+        happiness = Mathf.Clamp(happiness - 15f, 0, 100);
+    }
 }
