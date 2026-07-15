@@ -103,6 +103,7 @@ public class PetStateMachine : MonoBehaviour
         happiness = Mathf.Clamp(happiness + 25f, 0, 100);
         hunger = Mathf.Clamp(hunger - 15f, 0, 100);
         cleanliness = Mathf.Clamp(cleanliness - 15f, 0, 100);
+        energy = Mathf.Clamp(energy - 15f, 0, 100);
     }
 
     public bool IsComboSadHungryDirty => hunger < 30f && cleanliness < 30f && happiness < 30f;
