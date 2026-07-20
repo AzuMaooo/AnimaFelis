@@ -73,8 +73,10 @@ This project is a self-directed Final Year Project (FYP) and primary portfolio p
 - [x] Combo "neglected" state (multiple stats critically low at once)
 - [x] PixelArt stat bar icons
 - [x] Mobile portrait UI (1080x2400), tested across resolutions
+- [x] Button press animations
 
 ### Next Up
+- [ ] Action-specific animations (cat reacts visually when Fed, Played with, Rested, or Cleaned)
 - [ ] Outdoor exploration mode (grid-based overworld)
   - [ ] Tilemap setup
   - [ ] Grid movement script
@@ -83,7 +85,6 @@ This project is a self-directed Final Year Project (FYP) and primary portfolio p
   - [ ] Scene transition from home scene
   - [ ] Stat system integration (outdoor actions affect stats)
 - [ ] Sound effects for actions and state changes
-- [ ] Button press animations
 
 ### Medium Term
 - [ ] Habit tracker integration, real-world habits feed pet stats
