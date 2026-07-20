@@ -10,6 +10,7 @@ Built with **Unity 6.3 LTS** · **C#** · **Android**
 <p align="center">
   <img src="docs/burntloaf.png" width="240" alt="AnimaFelis home screen"/>
   <img src="docs/EmotionDemo.gif" width="240" alt="AnimaFelis gameplay demo"/>
+   <img src="docs/AllStatesDemo.gif" width="240" alt="AnimaFelis all emotion states demo"/>
 </p>
 
 **Current build features:**
