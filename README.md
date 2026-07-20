@@ -77,6 +77,7 @@ This project is a self-directed Final Year Project (FYP) and primary portfolio p
 
 ### Next Up
 - [ ] Action-specific animations (cat reacts visually when Fed, Played with, Rested, or Cleaned)
+- [ ] Multiple home background themes (seasonal and time-of-day variants)
 - [ ] Outdoor exploration mode (grid-based overworld)
   - [ ] Tilemap setup
   - [ ] Grid movement script
