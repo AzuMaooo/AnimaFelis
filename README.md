@@ -141,6 +141,6 @@ These Android/Java prototypes were built first to validate the core logic before
 
 **Lai Zie Jin (AzuMaooo)** · Year 2 Software Engineering, UTAR Sungai Long Campus
 
-Solo developer on all AnimaFelis projects. Seeking a game development internship (October 2026, Singapore).
+Solo developer on all AnimaFelis projects. Seeking a game development internship (October 2026).
 
 [LinkedIn](https://linkedin.com/in/zie-jin-lai) · [GitHub](https://github.com/AzuMaooo)
